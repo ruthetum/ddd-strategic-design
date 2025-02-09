@@ -12,7 +12,7 @@ class MenuGroupRestController(
     private val menuGroupService: MenuGroupService,
 ) {
     @PostMapping
-    fun create(@RequestBody request: MenuGroup?): ResponseEntity<MenuGroup> {
+    fun create(@RequestBody request: MenuGroup): ResponseEntity<MenuGroup> {
         val response = menuGroupService.create(request)
         return ResponseEntity.created(URI.create("/api/menu-groups/" + response.id))
             .body(response)

@@ -13,14 +13,14 @@ class ProductRestController(
     private val productService: ProductService,
 ) {
     @PostMapping
-    fun create(@RequestBody request: Product?): ResponseEntity<Product> {
+    fun create(@RequestBody request: Product): ResponseEntity<Product> {
         val response = productService.create(request)
         return ResponseEntity.created(URI.create("/api/products/" + response.id))
             .body(response)
     }
 
     @PutMapping("/{productId}/price")
-    fun changePrice(@PathVariable productId: UUID?, @RequestBody request: Product?): ResponseEntity<Product> {
+    fun changePrice(@PathVariable productId: UUID, @RequestBody request: Product): ResponseEntity<Product> {
         return ResponseEntity.ok(productService.changePrice(productId, request))
     }
 

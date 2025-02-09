@@ -13,26 +13,26 @@ class OrderTableRestController(
     private val orderTableService: OrderTableService,
 ) {
     @PostMapping
-    fun create(@RequestBody request: OrderTable?): ResponseEntity<OrderTable> {
+    fun create(@RequestBody request: OrderTable): ResponseEntity<OrderTable> {
         val response = orderTableService.create(request)
         return ResponseEntity.created(URI.create("/api/order-tables/" + response.id))
             .body(response)
     }
 
     @PutMapping("/{orderTableId}/sit")
-    fun sit(@PathVariable orderTableId: UUID?): ResponseEntity<OrderTable> {
+    fun sit(@PathVariable orderTableId: UUID): ResponseEntity<OrderTable> {
         return ResponseEntity.ok(orderTableService.sit(orderTableId))
     }
 
     @PutMapping("/{orderTableId}/clear")
-    fun clear(@PathVariable orderTableId: UUID?): ResponseEntity<OrderTable> {
+    fun clear(@PathVariable orderTableId: UUID): ResponseEntity<OrderTable> {
         return ResponseEntity.ok(orderTableService.clear(orderTableId))
     }
 
     @PutMapping("/{orderTableId}/number-of-guests")
     fun changeNumberOfGuests(
-        @PathVariable orderTableId: UUID?,
-        @RequestBody request: OrderTable?
+        @PathVariable orderTableId: UUID,
+        @RequestBody request: OrderTable
     ): ResponseEntity<OrderTable> {
         return ResponseEntity.ok(orderTableService.changeNumberOfGuests(orderTableId, request))
     }
