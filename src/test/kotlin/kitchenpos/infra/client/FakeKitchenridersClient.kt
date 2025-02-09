@@ -1,6 +1,6 @@
 package kitchenpos.infra.client
 
-import kitchenpos.infra.KitchenridersClient
+import kitchenpos.application.KitchenridersClient
 import java.math.BigDecimal
 import java.util.*
 

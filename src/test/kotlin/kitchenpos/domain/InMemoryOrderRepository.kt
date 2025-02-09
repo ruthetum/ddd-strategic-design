@@ -1,7 +1,6 @@
 package kitchenpos.domain
 
 import java.util.*
-import kotlin.collections.HashMap
 
 class InMemoryOrderRepository : OrderRepository {
     private val orders: MutableMap<UUID, Order> = HashMap()

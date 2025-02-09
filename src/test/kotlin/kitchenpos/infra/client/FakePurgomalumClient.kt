@@ -1,8 +1,9 @@
 package kitchenpos.infra.client
 
-import kitchenpos.infra.PurgomalumClient
+import kitchenpos.application.PurgomalumClient
 
-class FakePurgomalumClient  : PurgomalumClient {
+
+class FakePurgomalumClient : PurgomalumClient {
 
     override fun containsProfanity(text: String): Boolean {
         return profanities.any { text.contains(it) }

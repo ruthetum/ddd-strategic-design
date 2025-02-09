@@ -6,7 +6,6 @@ import kitchenpos.Fixtures.menuGroup
 import kitchenpos.Fixtures.menuProduct
 import kitchenpos.Fixtures.product
 import kitchenpos.domain.*
-import kitchenpos.infra.PurgomalumClient
 import kitchenpos.infra.client.FakePurgomalumClient
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.BeforeEach
