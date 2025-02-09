@@ -9,6 +9,12 @@ plugins {
     id("org.flywaydb.flyway") version "7.12.0"
 }
 
+allOpen{
+    annotation("javax.persistence.Entity")
+    annotation("javax.persistence.Embeddable")
+    annotation("javax.persistence.MappedSuperclass")
+}
+
 group = "camp.nextstep.edu"
 version = "0.0.1-SNAPSHOT"
 
