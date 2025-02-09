@@ -52,6 +52,7 @@ public class MenuProduct {
 
     public void setProduct(final Product product) {
         this.product = product;
+        this.productId = product.getId();
     }
 
     public long getQuantity() {

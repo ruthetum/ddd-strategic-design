@@ -26,7 +26,7 @@ object Fixtures {
         vararg menuProducts: MenuProduct = arrayOf(menuProduct()),
     ): Menu {
         val menu = Menu()
-        menu.id = INVALID_ID
+        menu.id = UUID.randomUUID()
         menu.name = "후라이드+후라이드"
         menu.price = BigDecimal.valueOf(price)
         menu.menuGroup = menuGroup()
